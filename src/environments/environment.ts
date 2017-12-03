@@ -15,7 +15,9 @@ export const environment = {
       allInstrument: '/api/instrument',
       oneInstument: '/api/instrument/:id',
       allArtist: '/api/user',
-      oneArtist: '/api/user/:id'
+      oneArtist: '/api/user/:id',
+      allResearch: '/api/research',
+      oneResearch: '/api/research/:id'
     }
   }
 };
