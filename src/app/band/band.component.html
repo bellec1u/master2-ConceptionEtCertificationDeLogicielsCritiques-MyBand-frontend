@@ -1,18 +1,16 @@
 <div class="card">
   <!-- band -->
-  <img class="card-img-top" src="https://image.freepik.com/icones-gratuites/point-d-39-interrogation_318-52837.jpg" alt="Card image cap">
+  <img class="card-img-top logo" src="{{ band.logo }}" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title"> {{ band.name }} </h4>
     <p class="card-text"> {{ band.description }} </p>
   </div>
 
   <!-- members of the band -->
-  <div class="card" style="width: 20rem;" *ngFor="let artist of band.members">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+  <div class="row justify-content-md-center">
+  <div class="col-lg-4" *ngFor="let artist of members" style="text-align: center;">
+    <img class="rounded-circle" src="/assets/images/person.png" alt="Generic placeholder image" width="140" height="140">
+    <h2>{{artist.lastname}}  {{artist.firstname}}</h2>
+    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+  </div></div>
 </div>

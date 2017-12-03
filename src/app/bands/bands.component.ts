@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BandsService} from '../shared/bands-service/bands.service';
+import {BandService} from '../shared/band-service/band.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class BandsComponent implements OnInit {
   // private property to store people value
   private _bands: any[];
 
-  constructor(private _router: Router, private _bandsService: BandsService) {
+  constructor(private _router: Router, private _bandService: BandService) {
     this._bands = [];
   }
 
@@ -28,7 +28,7 @@ export class BandsComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
-    this._bandsService
+    this._bandService
       .fetch()
       .subscribe((bands: any[]) => this._bands = bands);
   }

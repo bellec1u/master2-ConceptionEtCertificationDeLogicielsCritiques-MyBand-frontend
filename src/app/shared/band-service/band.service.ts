@@ -6,7 +6,7 @@ import 'rxjs/add/operator/defaultIfEmpty';
 import 'rxjs/add/operator/filter';
 
 @Injectable()
-export class BandsService {
+export class BandService {
 
   // private property to store all backend URLs
   private _backendURL: any;

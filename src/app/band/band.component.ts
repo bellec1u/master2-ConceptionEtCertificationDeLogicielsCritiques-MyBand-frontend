@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {BandsService} from '../shared/bands-service/bands.service';
+import {BandService} from '../shared/band-service/band.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
+import {ArtistsService} from '../shared/artists-service/artists.service';
 
 @Component({
   selector: 'app-band',
@@ -11,9 +12,12 @@ import {Observable} from 'rxjs/Observable';
 export class BandComponent implements OnInit {
   // private property to store band value
   private _band: any;
+  // private property to store member value
+  private _members: any[];
 
-  constructor(private _bandService: BandsService, private _route: ActivatedRoute) {
+  constructor(private _bandService: BandService, private _artistService: ArtistsService, private _route: ActivatedRoute) {
     this._band = {};
+    this._members = [];
   }
 
   /**
@@ -26,6 +30,15 @@ export class BandComponent implements OnInit {
   }
 
   /**
+   * Returns private property _members
+   *
+   * @returns {any}
+   */
+  get members(): any {
+    return this._members;
+  }
+
+  /**
    * OnInit implementation
    */
   ngOnInit() {
@@ -35,7 +48,20 @@ export class BandComponent implements OnInit {
           .filter(params => !!params['id'])
           .flatMap(params => this._bandService.fetchOne(params['id']))
       )
-      .subscribe((band: any) => this._band = band);
+      .subscribe((band: any) => { this._band = band; this.extractMembers(band.members); });
+  }
+
+  /**
+   * Extract id of all members of the band and search them
+   *
+   * @param {any[]} idMembers
+   */
+  extractMembers(idMembers: any[]) {
+    for (const id of idMembers) {
+      this._artistService
+        .fetchOne(id)
+        .subscribe((artist: any[]) => this._members.push(artist));
+    }
   }
 
 }
