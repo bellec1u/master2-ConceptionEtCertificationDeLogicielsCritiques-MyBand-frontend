@@ -31,7 +31,7 @@ export class BandsService {
    * @returns {Observable<any[]>}
    */
   fetch(): Observable<any[] | ArrayBuffer> {
-    return this._http.get(this._backendURL.allBands, this._options())
+    return this._http.get(this._backendURL.allBand, this._options())
       .filter(_ => !!_)
       .defaultIfEmpty([]);
   }

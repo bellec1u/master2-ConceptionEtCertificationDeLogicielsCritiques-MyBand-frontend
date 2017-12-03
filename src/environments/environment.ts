@@ -11,9 +11,9 @@ export const environment = {
     port: '4443',
     endpoints: {
       allBand: '/api/band',
-      oneBand: '/api/band',
+      oneBand: '/api/band/:id',
       allInstrument: '/api/instrument',
-      oneInstument: '/api/instrument',
+      oneInstument: '/api/instrument/:id',
       allArtist: '/api/user',
       oneArtist: '/api/user/:id'
     }

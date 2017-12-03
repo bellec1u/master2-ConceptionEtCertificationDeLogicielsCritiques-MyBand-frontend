@@ -13,4 +13,4 @@ const ROUTES: Routes = [
   { path: 'artist/:id', component: ArtistsComponent }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: false });
