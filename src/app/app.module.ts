@@ -11,31 +11,18 @@ import {ArtistsService} from './shared/artists-service/artists.service';
 import {BandsService} from './shared/bands-service/bands.service';
 import {ArtistComponent} from './artist/artist.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from '@angular/forms';
-/*
-import {
-  MatToolbarModule,
-  MatCardModule,
-  MatButtonModule,
-  MatListModule,
-  MatIconModule,
-  MatCheckboxModule,
-  MatDialogModule,
-  MatInputModule
-} from '@angular/material';
-*/
+import {BandComponent} from './band/band.component';
+
 @NgModule(<NgModule>{
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
+    HeaderComponent, FooterComponent,
     HomeComponent,
-    ArtistsComponent,
-    BandsComponent,
-    ArtistComponent
+    ArtistComponent, ArtistsComponent,
+    BandComponent, BandsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,19 +30,12 @@ import {
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    /*
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatDialogModule,
-    MatInputModule,
-    */
     APP_ROUTES
   ],
-  providers: [ArtistsService, BandsService],
+  providers: [
+    ArtistsService,
+    BandsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

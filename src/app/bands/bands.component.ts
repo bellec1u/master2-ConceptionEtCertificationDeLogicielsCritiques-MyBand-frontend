@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BandsService} from '../shared/bands-service/bands.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bands',
@@ -10,7 +11,7 @@ export class BandsComponent implements OnInit {
   // private property to store people value
   private _bands: any[];
 
-  constructor(private _bandsService: BandsService) {
+  constructor(private _router: Router, private _bandsService: BandsService) {
     this._bands = [];
   }
 
@@ -30,6 +31,15 @@ export class BandsComponent implements OnInit {
     this._bandsService
       .fetch()
       .subscribe((bands: any[]) => this._bands = bands);
+  }
+
+  /**
+   * Function to navigate to current band
+   *
+   * @param band
+   */
+  navigate(band) {
+    this._router.navigate(['/band', band.id]);
   }
 
 }
