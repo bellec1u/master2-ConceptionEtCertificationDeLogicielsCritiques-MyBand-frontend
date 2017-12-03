@@ -7,12 +7,15 @@ export const environment = {
   production: false,
   backend: {
     protocol: 'http',
-    host: '127.0.0.1',
-    port: '9000',
+    host: '0.0.0.0',
+    port: '4443',
     endpoints: {
-      allPeople: '/api/artists',
-      randomPeople: '/api/artists/random',
-      onePeople: '/api/artists/:id'
+      allBand: '/api/band',
+      oneBand: '/api/band',
+      allInstrument: '/api/instrument',
+      oneInstument: '/api/instrument',
+      allArtist: '/api/user',
+      oneArtist: '/api/user/:id'
     }
   }
 };
