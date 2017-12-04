@@ -31,20 +31,9 @@ export class ArtistsService {
    * @returns {Observable<any[]>}
    */
   fetch(): Observable<any[] | ArrayBuffer> {
-    return this._http.get(this._backendURL.allArtists, this._options())
+    return this._http.get(this._backendURL.allArtist, this._options())
       .filter(_ => !!_)
       .defaultIfEmpty([]);
-  }
-
-  /**
-   * Function to return one random artist from people list
-   *
-   * @returns {Observable<any>}
-   */
-  fetchRandom(): Observable<any> {
-    return this._http.get(this._backendURL.randomArtist, this._options())
-      .filter(_ => !!_)
-      .defaultIfEmpty({});
   }
 
   /**
@@ -66,7 +55,7 @@ export class ArtistsService {
    * @param artist
    */
   create(artist): Observable<any> {
-    return this._http.post(this._backendURL.allArtists, artist, this._options());
+    return this._http.post(this._backendURL.allArtist, artist, this._options());
   }
 
   /**

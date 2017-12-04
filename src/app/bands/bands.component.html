@@ -1,7 +1,7 @@
 <ul class="list-group">
   <a (click)="navigate(band)" class="list-group-item list-group-item-action" *ngFor="let band of bands">
     <div class="media">
-      <img class="mr-3 logo" src="{{ band.logo }}" alt="Generic placeholder image">
+      <img class="mr-3 logo" src="{{band.logo}}" alt="Generic placeholder image">
       <h5 style="margin-top: auto; margin-bottom: auto"> {{ band.name }} </h5>
     </div>
   </a>

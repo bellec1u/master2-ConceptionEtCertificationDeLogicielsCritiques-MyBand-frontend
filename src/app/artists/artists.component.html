@@ -1,3 +1,8 @@
-
-<p>gg it works
-</p>
+<ul class="list-group">
+  <a (click)="navigate(artist)" class="list-group-item list-group-item-action" *ngFor="let artist of artists">
+    <div class="media">
+      <img class="mr-3 logo" src="/assets/images/person.png" alt="Generic placeholder image">
+      <h5 style="margin-top: auto; margin-bottom: auto"> {{ artist.firstname }} {{ artist.lastname }}</h5>
+    </div>
+  </a>
+</ul>

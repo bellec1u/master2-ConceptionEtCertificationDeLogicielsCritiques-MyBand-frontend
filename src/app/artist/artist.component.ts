@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ArtistsService } from '../shared/artists-service/artists.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
@@ -22,7 +22,7 @@ export class ArtistComponent implements OnInit {
   /**
    * Component constructor
    */
-  constructor(private _artistsService: ArtistsService, private _route: ActivatedRoute) {
+  constructor(private _artistsService: ArtistsService, private _router: ActivatedRoute) {
     this._artist = {};
     this._isPerson = false;
   }
@@ -51,24 +51,10 @@ export class ArtistComponent implements OnInit {
   ngOnInit() {
     Observable
       .merge(
-        this._route.params
+        this._router.params
           .filter(params => !!params['id'])
           .flatMap(params => this._artistsService.fetchOne(params['id']))
-          .do(_ => this._isPerson = true),
-        this._route.params
-          .filter(params => !params['id'])
-          .flatMap(_ => this._artistsService.fetchRandom())
-          .do(_ => this._isPerson = false)
       )
-      .subscribe((artist: any) => this._artist = artist);
-  }
-
-  /**
-   * Returns random people
-   */
-  random() {
-    this._artistsService
-      .fetchRandom()
       .subscribe((artist: any) => this._artist = artist);
   }
 

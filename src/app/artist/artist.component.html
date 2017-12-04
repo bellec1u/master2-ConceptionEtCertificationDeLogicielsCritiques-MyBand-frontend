@@ -1,3 +1,19 @@
-<p>
-  artist works!
-</p>
+<div class="card">
+  <!-- artist -->
+  <img class="card-img-top logo" src="/assets/images/person.png" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-title"> Firstname : {{ this.artist.firstname }} </p>
+    <p class="card-text"> Lastname : {{ this.artist.lastname}} </p>
+    <p class="card-text"> Favorite Instrument : {{ this.artist.favoriteInstrument}} </p>
+  </div>
+
+
+  <!-- members of the band
+  <div class="row justify-content-md-center">
+    <div class="col-lg-4" *ngFor="let artist of members" style="text-align: center;">
+      <img class="rounded-circle" src="/assets/images/person.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>{{artist.lastname}}  {{artist.firstname}}</h2>
+      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+    </div></div>
+    -->
+</div>
