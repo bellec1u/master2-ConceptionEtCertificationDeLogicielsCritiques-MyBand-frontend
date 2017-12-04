@@ -2,11 +2,12 @@
   <!-- band -->
   <img class="card-img-top logo" src="{{ band.logo }}" alt="Card image cap">
   <div class="card-body">
-    <h4 class="card-title"> {{ band.name }} </h4>
-    <p class="card-text"> {{ band.description }} </p>
+    <h4 align="center" class="card-title"> {{ band.name }} </h4>
+    <p align="center" class="card-text"> {{ band.description }} </p>
   </div>
 
   <!-- members of the band -->
+  <u><h3 align="center">List of the band members</h3></u><br/>
   <div class="row justify-content-md-center">
   <div class="col-lg-4" *ngFor="let artist of members" style="text-align: center;">
     <img class="rounded-circle" src="/assets/images/person.png" alt="Generic placeholder image" width="140" height="140">
