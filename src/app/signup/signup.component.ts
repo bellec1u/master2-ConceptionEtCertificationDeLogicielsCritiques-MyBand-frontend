@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {ArtistsService} from '../shared/artists-service/artists.service';
+import {Observable} from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router, private _artistService: ArtistsService) {
+  }
 
   ngOnInit() {
   }
-
 }

@@ -9,7 +9,3 @@ img {
   margin-right: auto;
 }
 
-#left, #right {
-  width: 100px; //change this to whatever required
-float: left;
-}

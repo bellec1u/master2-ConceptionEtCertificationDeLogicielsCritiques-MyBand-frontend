@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <a class="list-group-item list-group-item-action" *ngFor="let research of researches">
+    <div class="media">
+      <h5 style="margin-top: auto; margin-bottom: auto"> {{ research.band }} </h5>
+      <h6 style="margin-top: auto; margin-bottom: auto">{{ research.description }}</h6>
+      <h6 style="margin-top: auto; margin-bottom: auto"> Is looking for Artists that play :</h6>
+      <h6 style="margin-top: auto; margin-bottom: auto">{{ research.instruments.toString() }}</h6>
+    </div>
+  </a>
+</ul>

@@ -8,6 +8,7 @@ import { BandComponent } from './band/band.component';
 import {ArtistComponent} from './artist/artist.component';
 import {SignupComponent} from './signup/signup.component';
 import {BandcreateComponent} from './createband/bandcreate.component';
+import {ConnectedHomeComponent} from './connected-home/connected-home.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const ROUTES: Routes = [
   { path: 'bands', component: BandsComponent },
   { path: 'band/:id', component: BandComponent },
   { path: 'createband', component: BandcreateComponent },
+  { path: 'logedin', component: ConnectedHomeComponent }
 ];
 
 export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: false });
