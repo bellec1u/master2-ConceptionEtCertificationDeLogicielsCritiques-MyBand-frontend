@@ -13,16 +13,16 @@
       </tr>
       <tr>
         <td><b>Band :</b></td>
-        <td style="padding-left:20px">{{artist.band}}</td>
+        <td style="padding-left:20px">{{band.name}}</td>
       </tr>
       <tr>
         <td><b>Favorite Instrument :</b></td>
-        <td style="padding-left:20px">{{artist.favoriteInstrument}}</td>
+        <td style="padding-left:20px">{{favoriteInstrument.name}}</td>
       </tr>
       <tr>
         <td><p align="center" class="card-text"> <b>List of played instruments :</b> </p></td>
-        <td style="padding-left:20px">
-          {{artist.instruments.toString()}}
+        <td style="padding-left:20px" *ngFor="let instrument of instruments">
+          {{instrument.name}}
         </td>
       </tr>
     </table>

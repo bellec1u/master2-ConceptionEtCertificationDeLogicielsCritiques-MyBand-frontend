@@ -57,7 +57,7 @@ export class BandComponent implements OnInit {
    *
    * @param {any[]} idMembers
    */
-  extractMembers(idMembers: any[]) {
+  private extractMembers(idMembers: any[]) {
     for (const id of idMembers) {
       this._artistService
         .fetchOne(id)
