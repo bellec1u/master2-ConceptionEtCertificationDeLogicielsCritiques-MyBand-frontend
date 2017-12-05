@@ -30,8 +30,16 @@ export class ResearchesComponent implements OnInit {
   ngOnInit() {
     this._researchService
       .fetch()
-      .subscribe((research: any[]) => this._researches = research);
+      .subscribe((researches: any[]) => { this._researches = researches; });
   }
 
+  /**
+   * Function to navigate to current research
+   *
+   * @param research
+   */
+  navigate(research) {
+    this._router.navigate(['/research', research.id]);
+  }
 
 }

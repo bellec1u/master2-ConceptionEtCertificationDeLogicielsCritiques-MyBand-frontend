@@ -30,7 +30,9 @@ import {InstrumentService} from './shared/instrument-service/instrument.service'
     HeaderComponent, FooterComponent,
     HomeComponent,
     ArtistComponent, ArtistsComponent,
-    BandComponent, BandsComponent, SignupComponent, BandcreateComponent, ConnectedHomeComponent, ResearchesComponent, ResearchComponent,
+    BandComponent, BandsComponent, BandcreateComponent,
+    SignupComponent, ConnectedHomeComponent, ResearchesComponent,
+    ResearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,5 @@
 <ul class="list-group">
-  <a class="list-group-item list-group-item-action" *ngFor="let research of researches">
-    <div class="media">
-      <p class="list-group-item-primary">{{ research.band }}</p>
-      <p class="list-group-item-secondary">{{ research.description }}</p>
-
-      <!--
-      <h6 style="margin-top: auto; margin-bottom: auto">{{ research.instruments.toString() }}</h6>
-      -->
-    </div>
+  <a (click)="navigate(research)" class="list-group-item list-group-item-action" *ngFor="let research of researches">
+    {{ research.description }}
   </a>
 </ul>
