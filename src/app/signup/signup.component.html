@@ -1,49 +1,42 @@
-<form>
-  <div class="form-group">
-    <label>Firsrtname :</label>
-    <input type="text" class="form-control" id="firstname" placeholder="Enter firstname">
-    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-  </div>
-  <div class="form-group">
-    <label>Lastname :</label>
-    <input type="text" class="form-control" id="lastname" placeholder="Enter lastname">
-    <!--password
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    -->
-  </div>
+<div class="card" style="padding: 5px">
+  <form>
+    <div class="form-group">
+      <label for="firstname">Firsrtname :</label>
+      <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" required>
+      <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+      <label>Lastname :</label>
+      <input type="text" class="form-control" id="lastname" placeholder="Enter lastname">
+      <!--password
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      -->
+    </div>
 
-  <div class="form-group">
-    <label>Band :</label>
-    <input type="text" class="form-control" id="band" placeholder="Enter your band">
-  </div>
+    <div class="form-group">
+      <label>Band :</label>
+      <input type="text" class="form-control" id="band" placeholder="Enter your band">
+    </div>
 
-  <div class="form-group">
-    <label>Favorite instrument :</label>
-    <input type="text" class="form-control" id="fav-instrument" placeholder="Enter your favorite instrument">
-  </div>
+    <div class="form-group">
+      <label>Favorite instrument :</label>
+      <input type="text" class="form-control" id="fav-instrument" placeholder="Enter your favorite instrument">
+    </div>
 
-  <div class="form-group">
-    <label>Other instruments that you can play :</label>
-    <select multiple class="form-control" id="instruments">
-      <option>Voice</option>
-      <option>Classic guitar</option>
-      <option>Electric guitar</option>
-      <option>Piano</option>
-      <option>Drum</option>
-      <option>Saxophone</option>
-      <option>Bass guitar</option>
-      <option>Violin</option>
-      <option>Flute</option>
-      <option>Trumpet</option>
-    </select>
-  </div>
+    <div class="form-group">
+      <label>Other instruments that you can play :</label>
+      <select multiple class="form-control" id="instruments">
+        <option *ngFor="let instrument of instruments">{{instrument.name}}</option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label>Load a profile picture :</label>
-    <input type="file" class="form-control-file" id="logo" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">Image format file (png, jpg ..)</small>
-  </div>
+    <div class="form-group">
+      <label>Load a profile picture :</label>
+      <input type="file" class="form-control-file" id="logo" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">Image format file (png, jpg ..)</small>
+    </div>
 
-  <!-- Enregistrer l'artist et rediriger vers Connected Home -->
-  <button type="submit" class="btn btn-primary" routerLink="/logedin">Submit</button>
-</form>
+    <!-- Enregistrer l'artist et rediriger vers Connected Home -->
+    <button type="submit" class="btn btn-primary" routerLink="/logedin">Submit</button>
+  </form>
+</div>

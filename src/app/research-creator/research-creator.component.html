@@ -1,0 +1,24 @@
+<div class="card">
+
+  <div class="container">
+    <h1>Post an ad</h1>
+    <form novalidate [formGroup]="form">
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description" required name="description">
+      </div>
+
+      <div class="form-group">
+        <label for="instruments">Requested instruments</label>
+        <select multiple class="form-control" id="instruments" formControlName="instruments" required name="instruments">
+          <option *ngFor="let instrument of instruments">{{instrument.name}}</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-outline-success" (click)="submitForm(form.value)" [disabled]="form.invalid">Submit</button>
+      <p></p>
+    </form>
+  </div>
+
+</div>

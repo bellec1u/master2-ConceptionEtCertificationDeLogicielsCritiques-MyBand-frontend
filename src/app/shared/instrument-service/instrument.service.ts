@@ -52,10 +52,11 @@ export class InstrumentService {
    *
    *
    * @returns {Observable<any>}
-   * @param band
+   * @param instrumenr
    */
-  create(band): Observable<any> {
-    return this._http.post(this._backendURL.allInstrument, band, this._options());
+  create(instrument): Observable<any> {
+    console.log('2');
+    return this._http.post(this._backendURL.allInstrument, instrument, this._options());
   }
 
   /**

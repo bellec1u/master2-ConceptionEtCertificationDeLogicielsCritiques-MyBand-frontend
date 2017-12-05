@@ -23,6 +23,8 @@ import { ResearchesComponent } from './researches/researches.component';
 import {ResearchService} from './shared/research-service/research.service';
 import { ResearchComponent } from './research/research.component';
 import {InstrumentService} from './shared/instrument-service/instrument.service';
+import { BandCreatorComponent } from './band-creator/band-creator.component';
+import { ResearchCreatorComponent } from './research-creator/research-creator.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {InstrumentService} from './shared/instrument-service/instrument.service'
     ArtistComponent, ArtistsComponent,
     BandComponent, BandsComponent, BandcreateComponent,
     SignupComponent, ConnectedHomeComponent, ResearchesComponent,
-    ResearchComponent
+    ResearchComponent,
+    BandCreatorComponent,
+    ResearchCreatorComponent
   ],
   imports: [
     BrowserModule,

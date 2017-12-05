@@ -70,7 +70,7 @@ export class ResearchComponent implements OnInit {
    *
    * @param {any[]} idInstruments
    */
-  extractInstruments(idInstruments: any[]) {
+  private extractInstruments(idInstruments: any[]) {
     for (const id of idInstruments) {
       this._instrumentService
         .fetchOne(id)
@@ -83,10 +83,13 @@ export class ResearchComponent implements OnInit {
    *
    * @param {any[]} idBand
    */
-  extractBand(idBand: any) {
+  private extractBand(idBand: any) {
       this._bandService
         .fetchOne(idBand)
         .subscribe((band: any) => this._band = band);
+  }
+
+  submit() {
   }
 
 }
