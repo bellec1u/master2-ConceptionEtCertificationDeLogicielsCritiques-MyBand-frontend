@@ -21,6 +21,8 @@ import { BandcreateComponent } from './createband/bandcreate.component';
 import { ConnectedHomeComponent } from './connected-home/connected-home.component';
 import { ResearchesComponent } from './researches/researches.component';
 import {ResearchService} from './shared/research-service/research.service';
+import { ResearchComponent } from './research/research.component';
+import {InstrumentService} from './shared/instrument-service/instrument.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import {ResearchService} from './shared/research-service/research.service';
     HeaderComponent, FooterComponent,
     HomeComponent,
     ArtistComponent, ArtistsComponent,
-    BandComponent, BandsComponent, SignupComponent, BandcreateComponent, ConnectedHomeComponent, ResearchesComponent,
+    BandComponent, BandsComponent, SignupComponent, BandcreateComponent, ConnectedHomeComponent, ResearchesComponent, ResearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import {ResearchService} from './shared/research-service/research.service';
   providers: [
     ArtistsService,
     BandService,
-    ResearchService
+    ResearchService,
+    InstrumentService
   ],
   bootstrap: [AppComponent]
 })
