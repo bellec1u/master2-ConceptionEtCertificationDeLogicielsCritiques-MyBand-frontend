@@ -16,6 +16,8 @@ import { BandComponent } from './band/band.component';
 
 import { ArtistsService } from './shared/artists-service/artists.service';
 import { BandService } from './shared/band-service/band.service';
+import { SignupComponent } from './signup/signup.component';
+import { BandcreateComponent } from './createband/bandcreate.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { BandService } from './shared/band-service/band.service';
     HeaderComponent, FooterComponent,
     HomeComponent,
     ArtistComponent, ArtistsComponent,
-    BandComponent, BandsComponent
+    BandComponent, BandsComponent, SignupComponent, BandcreateComponent
   ],
   imports: [
     BrowserModule,

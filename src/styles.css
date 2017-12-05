@@ -2,7 +2,9 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-  padding-top: 3rem;
+  padding-top: 5rem;
+  margin: auto;
+  width: 70%;
 }
 
 hr {

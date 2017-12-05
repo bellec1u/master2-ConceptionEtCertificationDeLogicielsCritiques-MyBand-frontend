@@ -7,11 +7,12 @@
   </div>
 
   <!-- members of the band -->
-  <u><h3 align="center">List of band members</h3></u><br/>
+  <b><h3 align="center">Band members</h3></b>
   <div class="row justify-content-md-center">
-  <div class="col-lg-4" *ngFor="let artist of members" style="text-align: center;">
-    <img class="rounded-circle" src="/assets/images/person.png" alt="Generic placeholder image" width="140" height="140">
-    <h2>{{artist.lastname}}  {{artist.firstname}}</h2>
-    <p><a class="btn btn-secondary" (click)="navigate(artist)" role="button">View details &raquo;</a></p>
-  </div></div>
+    <div class="col-lg-4" *ngFor="let artist of members" style="text-align: center;">
+      <img class="rounded-circle" src="/assets/images/person.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>{{artist.lastname}}  {{artist.firstname}}</h2>
+      <p><a class="btn btn-secondary" (click)="navigate(artist)" role="button">View details &raquo;</a></p>
+    </div>
+  </div>
 </div>
