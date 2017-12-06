@@ -4,9 +4,12 @@
     <h4 align="center" class="card-title"> {{ band.name }} </h4>
     <p align="center" class="card-text"> {{ research.description }} </p>
 
+    <div align="center" class="card-test" *ngFor="let instrument of instruments">{{instrument}}</div>
 
-    <button (click)="submit()" type="button" class="btn btn-outline-success">Rejoindre</button>
-    <button (click)="delete()" *ngIf="isOwner()" type="button" class="btn btn-outline-success">Supprimer</button>
+
+    <button (click)="submit()" *ngIf="!isOwner()" type="button" class="btn btn-outline-success">Rejoindre</button>
+    <button (click)="edit()" *ngIf="isOwner()" type="button" class="btn btn-outline-warning">Modifier</button>
+    <button (click)="delete()" *ngIf="isOwner()" type="button" class="btn btn-outline-danger">Supprimer</button>
   </div>
 
 </div>

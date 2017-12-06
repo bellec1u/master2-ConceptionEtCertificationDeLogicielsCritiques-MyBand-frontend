@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectAddResearch() {
-    this._router.navigate(['/researchCreator']);
+    this._router.navigate(['/researchCreator', -1]);
   }
 
 }

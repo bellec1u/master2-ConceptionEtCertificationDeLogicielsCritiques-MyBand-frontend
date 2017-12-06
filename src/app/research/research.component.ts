@@ -61,8 +61,10 @@ export class ResearchComponent implements OnInit {
           .filter(params => !!params['id'])
           .flatMap(params => this._searchService.fetchOne(params['id']))
       )
-      .subscribe((research: any) => {   this._research = research;
-        this.extractInstruments(research.instruments); this.extractBand(research.band); });
+      .subscribe((research: any) => {
+        this._research = research;
+        this.extractInstruments(research.instruments);
+        this.extractBand(research.band); });
   }
 
   /**
@@ -74,7 +76,7 @@ export class ResearchComponent implements OnInit {
     for (const id of idInstruments) {
       this._instrumentService
         .fetchOne(id)
-        .subscribe((instrument: any[]) => this._instruments.push(instrument));
+        .subscribe((instrument: any) => this._instruments.push(instrument.name));
     }
   }
 
@@ -101,6 +103,10 @@ export class ResearchComponent implements OnInit {
     this._searchService
       .delete(this._research.id)
       .subscribe((research: any[]) => this._route.navigate(['/home']));
+  }
+
+  edit() {
+    this._route.navigate(['/researchCreator', this._research.id]);
   }
 
 }

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/defaultIfEmpty';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/empty';
 
 
 @Injectable()
@@ -67,8 +68,8 @@ export class ResearchService {
    * @returns {Observable<any>}
    * @param research
    */
-  update(research: any): Observable<any> {
-    return this._http.put(this._backendURL.oneResearch.replace(':id', research.id), research, this._options());
+  update(id: any, research: any): Observable<any> {
+    return this._http.put(this._backendURL.oneResearch.replace(':id', id), research, this._options());
   }
 
   /**

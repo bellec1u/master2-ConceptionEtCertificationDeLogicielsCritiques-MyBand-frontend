@@ -23,7 +23,7 @@ const ROUTES: Routes = [
   { path: 'createband', component: BandcreateComponent },
   { path: 'logedin', component: ConnectedHomeComponent },
   { path: 'research/:id', component: ResearchComponent },
-  { path: 'researchCreator', component: ResearchCreatorComponent }
+  { path: 'researchCreator/:id', component: ResearchCreatorComponent }
 ];
 
 export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: false });
