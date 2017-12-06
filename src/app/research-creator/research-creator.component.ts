@@ -3,6 +3,7 @@ import {InstrumentService} from '../shared/instrument-service/instrument.service
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ArtistsService} from '../shared/artists-service/artists.service';
 import {ResearchService} from '../shared/research-service/research.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-research-creator',
@@ -36,7 +37,7 @@ export class ResearchCreatorComponent implements OnInit {
   }
 
   constructor(private _instrumentService: InstrumentService, private _artistService: ArtistsService,
-              private _researchService: ResearchService) {
+              private _researchService: ResearchService, private _router: Router) {
     this._instruments = [];
     this._form = this._buildForm();
   }
@@ -51,9 +52,10 @@ export class ResearchCreatorComponent implements OnInit {
     this._artistService
       .fetch()
       .subscribe((artist: any) => {
-        form.band = artist[8].band;
-        console.log(form);
-        console.log(this._researchService.create(form));
+        form.band = artist[8].band; // test
+        this._researchService
+          .create(form)
+          .subscribe((_: any[]) => this._router.navigate(['/home']));
       });
   }
 

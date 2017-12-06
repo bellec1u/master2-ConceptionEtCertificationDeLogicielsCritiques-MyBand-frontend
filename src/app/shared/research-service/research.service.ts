@@ -56,6 +56,7 @@ export class ResearchService {
    * @param research
    */
   create(research): Observable<any> {
+    console.log(research);
     return this._http.post(this._backendURL.allResearch, research, this._options());
   }
 

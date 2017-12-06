@@ -92,4 +92,15 @@ export class ResearchComponent implements OnInit {
   submit() {
   }
 
+  isOwner(): boolean {
+    return true;
+  }
+
+  delete() {
+    console.log(this._research.id);
+    this._searchService
+      .delete(this._research.id)
+      .subscribe((research: any[]) => this._route.navigate(['/home']));
+  }
+
 }

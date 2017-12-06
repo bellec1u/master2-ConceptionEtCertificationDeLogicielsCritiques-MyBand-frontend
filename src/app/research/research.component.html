@@ -6,6 +6,7 @@
 
 
     <button (click)="submit()" type="button" class="btn btn-outline-success">Rejoindre</button>
+    <button (click)="delete()" *ngIf="isOwner()" type="button" class="btn btn-outline-success">Supprimer</button>
   </div>
 
 </div>
